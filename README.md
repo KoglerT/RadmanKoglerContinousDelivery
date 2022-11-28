@@ -28,3 +28,24 @@ Please make sure to update tests as appropriate.
 ## License
 
 [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
+
+
+
+
+
+## Documentation
+
+### Die ersten Schritte: 
+
+    IDE und Java updated. Pathvariable neu setzten und verwendete java version mit pom.xml abgleichen.
+    project laden
+    ordnersturcture für worklflows anlegen
+        .github/workflows
+        .yml datei erstellen
+    beim kopieren der .yaml file sind einrückungsfehler entstanden -> diese wurden gelöst
+
+
+###
+
+
+![img.png](img.png)
