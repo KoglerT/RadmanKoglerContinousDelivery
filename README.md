@@ -45,7 +45,8 @@ Please make sure to update tests as appropriate.
     beim kopieren der .yaml file sind einrückungsfehler entstanden -> diese wurden gelöst
 
 
-###
+### (optional) Überlegen Sie sich, wie Sie die einzelnen Schritte (compile und test) separat als
+steps abbilden können. Wäre das vorteilhaft? Begründen Sie Ihre Antwort.
 
 
 ![img.png](img.png)
