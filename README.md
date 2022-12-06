@@ -29,13 +29,9 @@ Please make sure to update tests as appropriate.
 
 [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
 
-
-
-
-
 ## Documentation
 
-### Die ersten Schritte: 
+### Die ersten Schritte
 
     IDE und Java updated. Pathvariable neu setzten und verwendete java version mit pom.xml abgleichen.
     project laden
@@ -44,9 +40,9 @@ Please make sure to update tests as appropriate.
         .yml datei erstellen
     beim kopieren der .yaml file sind einrückungsfehler entstanden -> diese wurden gelöst
 
+## Java-CI-01
 
-### (optional) Überlegen Sie sich, wie Sie die einzelnen Schritte (compile und test) separat als
-steps abbilden können. Wäre das vorteilhaft? Begründen Sie Ihre Antwort.
+### (optional) Überlegen Sie sich, wie Sie die einzelnen Schritte (compile und test) separat als steps abbilden können. Wäre das vorteilhaft? Begründen Sie Ihre Antwort.
 
 
 ![img.png](img.png)
