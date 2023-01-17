@@ -42,6 +42,8 @@ Please make sure to update tests as appropriate.
 
 ## Java-CI-01
 
+## Java-CI-04
+
 ### (optional) Überlegen Sie sich, wie Sie die einzelnen Schritte (compile und test) separat als steps abbilden können. Wäre das vorteilhaft? Begründen Sie Ihre Antwort.
 
 
