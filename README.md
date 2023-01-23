@@ -45,7 +45,8 @@ Please make sure to update tests as appropriate.
 ### erstellen der unit test actions
 
 Die github action unit tester, tested alle unit test und gibt dann aus welche gefailt haben und welche funktionieren. 
-Wenn tests failen ist ein merge nicht möglich 
+Wenn Tests failen ist ein merge nicht möglich 
+Dies entspricht eines der Grundprinzipien. Testen des Builds.
 
 https://github.com/dorny/test-reporter
 https://github.com/marketplace/actions/test-reporter
@@ -68,8 +69,12 @@ which causes people to ignore messages.
 
 Relying on IDE settings for Automated Build.
 Build cannot run from the command line
+
+
 ### Wie weit kann Continuous Integration mit der aktuellen Übung erfüllt werden? Begründen Sie Ihre Antworten.
 Continous Integration kann mit dieser Übung erfüllt werden. Mann muss sich nur überlegen welche Actions man braucht um 
 gewisse Anforderungen, die man an sein Projekt hat zu erfüllen
+
+
 
 
