@@ -6,17 +6,17 @@ on:
   push:
     branches:
       - master
-      -
-runs:
-  using: composite
-  steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-    - name: Version
-      id: version
-      uses: juliansangillo/tag-version@v1
-      with:
-        production-branch: main
-        dev-branch: dev
+jobs:
+  runs:
+    using: composite
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Version
+        id: version
+        uses: juliansangillo/tag-version@v1
+        with:
+          production-branch: main
+          dev-branch: dev
