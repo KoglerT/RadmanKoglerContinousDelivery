@@ -25,7 +25,7 @@ jobs:
         if: success() || failure()
         with:
           name: Test Results
-          path: /target/surefire-reports/at.fhj.iit.CalculatorImplTest.txt
+          path: RadmanKoglerContinousDelivery/target/surefire-reports/*.txt
           reporter: java-junit
           java-version: 19
 #      - name: Upload target folder
