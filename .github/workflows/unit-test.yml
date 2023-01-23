@@ -25,9 +25,15 @@ jobs:
         if: success() || failure()
         with:
           name: Test Results
-          path: RadmanKoglerContinousDelivery/target/surefire-reports/*.txt
+          path: surefire-reports/*.xml
           reporter: java-junit
           java-version: 19
+          only-summary: 'false'
+          list-suites: 'all'
+          list-tests: 'all'
+          max-annotations: '10'
+          fail-on-error: 'true'
+
 #      - name: Upload target folder
 #        uses: actions/upload-artifact@v2
 #        with:
