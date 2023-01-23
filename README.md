@@ -1,8 +1,12 @@
-# Calculator Example 1.2 
+# Continuous Delivery (Techdemo + Task-01)
 
-Upgraded, tested and cleaned for Continuous Delivery Pipeline testing
+## General information
 
-## Installation
+### Codebase
+The codebase is the `Calculator Example 1.2` from Configuration Management (MSD, 2. semester). 
+The codebase was then upgraded, tested and cleaned to be used for Continuous Delivery.
+
+### Installation
 
 no special installation needed, currently upgraded Tools Version for 1.2
 - Maven 3.8.6
@@ -12,27 +16,90 @@ no special installation needed, currently upgraded Tools Version for 1.2
 mvn clean
 ```
 
-## Usage
+### Usage
 
 ```bash
 mvn test
 ```
 
-## Contributing
+### Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
-## License
+### License
 
 [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
 
-## Documentation
+## Techdemo
 
-### Die ersten Schritte
+### Unit Test Workflow
+Es wurde ein neuer github workflow erstellt: `Automatic Unit Test`
+Dies ist ein unit tester. Er tested alle unit test und gibt dann aus welche failen und welche funktionieren.
+Wenn Tests failen ist ein merge in den main-branch nicht möglich
 
+### Aufbau des Workflows
+Der Workflow ist in mehrere Teile aufgebaut:
+1. Code checkout
+2. SDK definieren
+3. Maven test ausführen
+4. Einen test report (surefire report) erstellen
+5. Mittels marketplace-action `dorny/test-reporter` wird der Testbericht in gutem Format angezeigt im Workflow
+6. Der Bericht kann je nach Bedürfnissen im workflow konfiguriert werden
+
+### Principles, practices, patterns and anti-patterns of Continuous Integration
+Unser Unit Test Workflow ermöglich es mehrere Praktiken bzw. Pattern von CI zu erfüllen bzw. Anti-Pattern zu verhindern.
+
+#### Principles/Practices
+- **Verpflichtung zur Mainline**
+  - Dadurch dass die Tests erfolgreich sein müssen, wird diese Verpflichtung unterstrichen
+- **Testen des Build**
+  - Zentraler Bestandteil unseres Workflows
+- **Unmittelbare Fehlerbehebung fehlerhafter Builds**
+  - Dadurch dass die Tests erfolgreich sein müssen, wird diese Verpflichtung unterstrichen
+
+Siehe:
+https://www.dev-insider.de/wie-erreicht-man-continuous-integration-a-706469/
+
+#### Pattern und Anti-Patterns
+- BUILD SOFTWARE AT EVERY CHANGE
+  - Run a software build with every change applied to the Repository
+  - Wird erfüllt durch andere workflows
+- PRE-MERGE BUILD
+  - Verify that your changes will not break the
+    integration build by performing a pre-merge
+    build---either locally or using Continuous
+    Integration.
+  - Wird erfüllt, da tests laufen müssen before merge möglich
+- CONTINUOUS FEEDBACK
+  - Pattern: Send automated feedback from the CI server to development team members involved in the build.
+  - Anti-Pattern: Sending minimal feedback that provides
+    no insight into the build failure or is nonactionable. Sending too much feedback,
+    including to team members uninvolved with
+    the build. This is eventually treated like spam,
+    which causes people to ignore messages.
+  - Wir erfüllen das Pattern und verhindern mit unserem workflow das anti-pattern
+- EXPEDITIOUS FIXES
+  - Fix build errors as soon as they occur
+  - Wird erfüllt, da merge sonst nicht möglich
+- AUTOMATED TESTS
+  - Write automated tests for each code path,
+    both success testing and failure testing.
+  - Wird erfüllt durch unseren workflow
+
+Siehe:
+https://advance.biz-tech-insights.com/whitepaper/ci-patterns-and-anti-patterns.pdf
+
+### Github Action und Sources
+- https://github.com/dorny/test-reporter
+- https://github.com/marketplace/actions/test-reporter
+- https://mfaisalkhatri.github.io/2022/04/26/githubactions-for-java-maven-project/
+
+## Task 01
+
+### Installation
     IDE und Java updated. Pathvariable neu setzten und verwendete java version mit pom.xml abgleichen.
     project laden
     ordnersturcture für worklflows anlegen
@@ -40,22 +107,10 @@ Please make sure to update tests as appropriate.
         .yml datei erstellen
     beim kopieren der .yaml file sind einrückungsfehler entstanden -> diese wurden gelöst
 ![img.png](img.png)
-## Java-CI-01
 
-### erstellen der unit test actions
+### Übungsfragen
 
-Die github action unit tester, tested alle unit test und gibt dann aus welche gefailt haben und welche funktionieren. 
-Wenn Tests failen ist ein merge nicht möglich 
-Dies entspricht eines der Grundprinzipien. Testen des Builds.
-
-https://github.com/dorny/test-reporter
-https://github.com/marketplace/actions/test-reporter
-https://mfaisalkhatri.github.io/2022/04/26/githubactions-for-java-maven-project/
-
-
-
-
-### Wie können CI/CD Pipelines uns dabei unterstützen CI Anti-Patterns zu vermeiden?
+#### Wie können CI/CD Pipelines uns dabei unterstützen CI Anti-Patterns zu vermeiden?
 Durch automatisierte Testung wird die gefahr der Anti Patterns verringert.
 Durch einführung der Github Actions können Defects früh erkannt werden. 
 
@@ -70,34 +125,6 @@ which causes people to ignore messages.
 Relying on IDE settings for Automated Build.
 Build cannot run from the command line
 
-
-### Wie weit kann Continuous Integration mit der aktuellen Übung erfüllt werden? Begründen Sie Ihre Antworten.
+#### Wie weit kann Continuous Integration mit der aktuellen Übung erfüllt werden? Begründen Sie Ihre Antworten.
 Continous Integration kann mit dieser Übung erfüllt werden. Mann muss sich nur überlegen welche Actions man braucht um 
 gewisse Anforderungen, die man an sein Projekt hat zu erfüllen
-
-
-
-
-28.11.2022 Erste CI/CD Pipeline
-Bearbeitung der Übungseinleitung
-Dokumentation der Tätigkeiten
-Integration von 2 bis 3 weiteren nützlichen GitHub Actions (TechDemo im Jänner)
-Wie können CI/CD Pipelines uns dabei unterstützen CI Anti-Patterns zu vermeiden?
-Wie weit kann Continuous Integration mit der aktuellen Übung erfüllt werden? Begründen Sie Ihre Antworten.
-
-06.12.2022 Docker Einführung
-„ausführbarer“ Container mit zumindest dem Übungsbeispiel in einem „public“ Repository auf Docker Hub
-bzw. Eigenes Beispiel (wenn möglich public), bzw. wenn es ein „private“ Projekt ist, dann in einem private Repository auf Docker Hub sowie nachvollziehbar dokumentiert.
-Integration der „Docker Bauschritte“ in die Continuous Delivery Pipeline
-Dokumentation der GitHub Actions, Docker Hub Repository sowie Docker Command zum Beziehen des gebauten Docker Image. (Screenshots, Erläuterungen, CLI-Befehle)
-20.12.2022 Docker Compose
-WIe können mehrere Container miteinander genutzt werden?
-Welche Vorteile bietet diese modulare Auftrennung?
-Wie ist ein docker-compose.yml aufgebaut?
-Welche Punkte müssen bei Docker Compose und CI/CD Pipelines beachtet werden?
-10.01.2023 Android CD
-Kennenlernen CI/CD von Android Applikationen
-bestehende App vorbereiten für CI/CD
-APK Signieren im Build Prozess
-Vorbereitung für APK Delivery / Vorbereitungen für APK Deployment
-
