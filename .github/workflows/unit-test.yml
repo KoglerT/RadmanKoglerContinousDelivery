@@ -23,10 +23,10 @@ jobs:
           path: ${{ github.workspace }}/target/surefire-reports/TEST-TestSuite.xml
           reporter: java-junit
           java-version: 19
-      - name: Upload target folder
-        uses: actions/upload-artifact@v2
-        with:
-          name: target
-          path: |
-            ${{ github.workspace }}/target
-            ${{ github.workspace }}/reports
+#      - name: Upload target folder
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: target
+#          path: |
+#            ${{ github.workspace }}/target
+#            ${{ github.workspace }}/reports
