@@ -17,11 +17,6 @@ jobs:
         run: mvn test
       - name: Surefire Report
         run: mvn surefire-report:report
-#      - name: Upload test report
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: test-results
-#          path: /target/surefire-reports/at.fhj.iit.CalculatorImplTest.txt
       - name: Test Reporter
         uses: dorny/test-reporter@v1.6.0
         if: success() || failure()
@@ -35,11 +30,3 @@ jobs:
           list-tests: 'all'
           max-annotations: '10'
           fail-on-error: 'true'
-
-#      - name: Upload target folder
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: target
-#          path: |
-#            ${{ github.workspace }}/target
-#            ${{ github.workspace }}/reports
