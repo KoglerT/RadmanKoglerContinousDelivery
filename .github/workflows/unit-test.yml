@@ -1,5 +1,5 @@
 name: Automatic Unit Test
-run-name: ${{ github.actor }}
+run-name: Unit Tests
 on: [push, pull_request]
 
 jobs:
@@ -15,14 +15,19 @@ jobs:
           distribution: 'adopt'
       - name: Build and test
         run: mvn test
-      - name: Test Report
-        uses: dorny/test-reporter@v1
-        if: success() || failure()
+      - name: Upload test report
+        uses: actions/upload-artifact@v2
         with:
-          name: Test Results
-          path: target/surefire-reports/TEST-TestSuite.xml
-          reporter: java-junit
-          java-version: 19
+          name: test-results
+          path: /target/surefire-reports/at.fhj.iit.CalculatorImplTest.txt
+#      - name: Test Report
+#        uses: dorny/test-reporter@v1
+#        if: success() || failure()
+#        with:
+#          name: Test Results
+#          path: target/surefire-reports/TEST-TestSuite.xml
+#          reporter: java-junit
+#          java-version: 19
 #      - name: Upload target folder
 #        uses: actions/upload-artifact@v2
 #        with:
