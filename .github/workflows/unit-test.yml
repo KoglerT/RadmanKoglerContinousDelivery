@@ -20,12 +20,12 @@ jobs:
 #        with:
 #          name: test-results
 #          path: /target/surefire-reports/at.fhj.iit.CalculatorImplTest.txt
-      - name: Test Report
-        uses: dorny/test-reporter@v1
+      - name: Test Reporter
+        uses: dorny/test-reporter@v1.6.0
         if: success() || failure()
         with:
           name: Test Results
-          path: /target/surefire-reports
+          path: /target/surefire-reports/at.fhj.iit.CalculatorImplTest.txt
           reporter: java-junit
           java-version: 19
 #      - name: Upload target folder
