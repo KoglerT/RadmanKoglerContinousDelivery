@@ -108,6 +108,19 @@ https://advance.biz-tech-insights.com/whitepaper/ci-patterns-and-anti-patterns.p
     beim kopieren der .yaml file sind einrückungsfehler entstanden -> diese wurden gelöst
 ![img.png](img.png)
 
+### Additional Workflow (Mind your language)
+Es wurde ein neuer github workflow erstellt: `Mind your language`
+Dieser erkennt wenn in Kommentaren (z.B. Pull Request, neue Issues) eine obszöne bzw. nicht angemessene Sprache verwendet wird und versendet warnungen.
+
+### Aufbau des Workflows
+Der Workflow ist in mehrere Teile aufgebaut:
+1. Auslöser (issues, issue-comment, pr-comment)
+2. Macht einen profanity check auf den text und führt die action aus
+
+### Github Action und Sources
+- https://github.com/marketplace/actions/mind-your-language
+- https://github.com/tailaiw/mind-your-language-action
+
 ### Übungsfragen
 
 #### Wie können CI/CD Pipelines uns dabei unterstützen CI Anti-Patterns zu vermeiden?
