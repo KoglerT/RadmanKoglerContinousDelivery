@@ -58,6 +58,16 @@ https://mfaisalkhatri.github.io/2022/04/26/githubactions-for-java-maven-project/
 Durch automatisierte Testung wird die gefahr der Anti Patterns verringert.
 Durch einführung der Github Actions können Defects früh erkannt werden. 
 
+Zum Beispiel. Diese Antipattern werden mit unseren worflows vermieden
+
+Sending minimal feedback that provides
+no insight into the build failure or is nonactionable. Sending too much feedback,
+including to team members uninvolved with
+the build. This is eventually treated like spam,
+which causes people to ignore messages.
+
+Relying on IDE settings for Automated Build.
+Build cannot run from the command line
 ### Wie weit kann Continuous Integration mit der aktuellen Übung erfüllt werden? Begründen Sie Ihre Antworten.
 Continous Integration kann mit dieser Übung erfüllt werden. Mann muss sich nur überlegen welche Actions man braucht um 
 gewisse Anforderungen, die man an sein Projekt hat zu erfüllen
