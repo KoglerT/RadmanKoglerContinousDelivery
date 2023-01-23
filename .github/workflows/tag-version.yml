@@ -1,10 +1,12 @@
 name: 'tag-version'
 description: 'Provides automated versioning of your commits using git tags each time your CI/CD workflow runs.'
 run-name: ${{ github.actor }}
-branding:
-  icon: 'tag'
-  color: 'purple'
 
+on:
+  push:
+    branches:
+      - master
+      -
 runs:
   using: composite
   steps:
