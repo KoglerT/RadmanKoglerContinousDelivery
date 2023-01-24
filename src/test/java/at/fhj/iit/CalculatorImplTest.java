@@ -16,7 +16,7 @@ public class CalculatorImplTest {
 	private Calculator calc;
 
 	/**
-	 * inits Calculator with CalculatorImpl for EACH test
+	 * inits Calculator with CalculatorImpl for each test
 	 */
 	@BeforeEach
 	void setup() {
