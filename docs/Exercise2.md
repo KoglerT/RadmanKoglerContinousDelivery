@@ -57,3 +57,10 @@ Docker image in dockerhub hochgeladen. Daraufhin wurde es getestet und hat funkt
 `docker push radmanma/calc_fhj_exercise`
 
 ![](img/e2_3_4.png)
+
+## Übungsteil 4 - Pipeline erweitern
+
+Die Pipeline wurde mit [einem neuen Workflow](../.github/workflows/exc2-docker.yml) erweitert.
+Dazu mussten auch die Secrets in den github-actions-secrets in den repo-settings hinzugefügt werden.
+
+Das Workflow funktioniert auch wie man sieht:
