@@ -1,3 +1,4 @@
 FROM eclipse-temurin:19-alpine
-WORKDIR /project
-COPY target/*.jar .
+WORKDIR /app
+COPY package*.json ./
+COPY . .
