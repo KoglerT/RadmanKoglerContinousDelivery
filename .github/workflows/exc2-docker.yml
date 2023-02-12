@@ -4,7 +4,7 @@ run-name: Docker Workflow for Exercise 2
 on:
   push:
     branches:
-      - main
+      - 'main'
 
 jobs:
   build:
@@ -26,5 +26,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/calc_fhj_exercise:latest
-
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.REPO_NAME }}:latest
