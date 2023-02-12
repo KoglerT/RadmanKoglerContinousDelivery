@@ -49,6 +49,7 @@ Image erzeugen <br>
 
 Docker Container starten und antesten. In unserem Fall gibt es wegen fehlender implementierung einen erwarteten Fehler. <br>
 `docker run --name calc_fhj_exercise_container -it --entrypoint /bin/sh radmanma/calc_fhj_exercise:latest`
+`java -jar Calculator-<version>.jar add 1 2`
 
 ![](img/e2_3_3.png)
 
@@ -64,3 +65,5 @@ Die Pipeline wurde mit [einem neuen Workflow](../.github/workflows/exc2-docker.y
 Dazu mussten auch die Secrets in den github-actions-secrets in den repo-settings hinzugefügt werden.
 
 Das Workflow funktioniert auch wie man sieht:
+
+![](img/e2_4_1.png)
